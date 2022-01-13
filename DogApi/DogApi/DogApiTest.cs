@@ -13,7 +13,7 @@ namespace DogApi
         [Test]
         public void VerifyRetrieverIsWithinList()
         {        
-            var response = dog.GetDogBreeds("https://dog.ceo/api/breeds/list/all");
+            var response = dog.GetRequest("https://dog.ceo/api/breeds/list/all");
             string json = response.Result.Content;
             Root dogBreeds = JsonConvert.DeserializeObject<Root>(json);
             string breedList = JsonConvert.SerializeObject(dogBreeds, Formatting.Indented);
@@ -24,7 +24,7 @@ namespace DogApi
         [Test]
         public void ReturnRetrieverSubBreeds()
         {
-            var response = dog.GetDogBreeds("https://dog.ceo/api/breeds/list/all");
+            var response = dog.GetRequest("https://dog.ceo/api/breeds/list/all");
             string json = response.Result.Content;
             Root dogBreeds = JsonConvert.DeserializeObject<Root>(json);
             string subBreed = JsonConvert.SerializeObject(dogBreeds.message.retriever, Formatting.Indented);            
@@ -35,7 +35,7 @@ namespace DogApi
         [Test]
         public void ProduceRandomImageLinkForSubBreed()
         {
-            var response = dog.GetDogBreeds("https://dog.ceo/api/breed/retriever/golden/images/random");
+            var response = dog.GetRequest("https://dog.ceo/api/breed/retriever/golden/images/random");
             string imageLink = response.Result.Content;
             string expression = @"\\";
             Match m = Regex.Match(imageLink,expression);

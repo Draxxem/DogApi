@@ -5,7 +5,7 @@ namespace DogApi.Controller
 {
     class DogController
     {
-        public async Task<IRestResponse> GetDogBreeds(string requestUrl)
+        public async Task<IRestResponse> GetRequest(string requestUrl)
         {
             var client = new RestClient(requestUrl);
             var request = new RestRequest(Method.GET);
