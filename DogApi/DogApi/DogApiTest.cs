@@ -1,23 +1,21 @@
 using DogApi.Controller;
 using Newtonsoft.Json;
 using NUnit.Framework;
-using System;
 using System.Text.RegularExpressions;
 
 namespace DogApi
 {
-     class DogApiTest : Models.Model
+     class DogApiTest : Models.DogBreed
     {
-        DogController dog = new DogController();
+        HttpClientHelper dog = new HttpClientHelper();
 
         [Test]
         public void VerifyRetrieverIsWithinList()
         {        
             var response = dog.GetRequest("https://dog.ceo/api/breeds/list/all");
             string json = response.Result.Content;
-            Root dogBreeds = JsonConvert.DeserializeObject<Root>(json);
+            BreedDetailsRoot dogBreeds = JsonConvert.DeserializeObject<BreedDetailsRoot>(json);
             string breedList = JsonConvert.SerializeObject(dogBreeds, Formatting.Indented);
-            Console.WriteLine(breedList);
             Assert.IsTrue(breedList.Contains("retriever"));     
         }
 
@@ -26,9 +24,8 @@ namespace DogApi
         {
             var response = dog.GetRequest("https://dog.ceo/api/breeds/list/all");
             string json = response.Result.Content;
-            Root dogBreeds = JsonConvert.DeserializeObject<Root>(json);
+            BreedDetailsRoot dogBreeds = JsonConvert.DeserializeObject<BreedDetailsRoot>(json);
             string subBreed = JsonConvert.SerializeObject(dogBreeds.message.retriever, Formatting.Indented);            
-            Console.WriteLine(subBreed);
             Assert.That(subBreed.Contains("golden"));
         }
 
@@ -40,7 +37,6 @@ namespace DogApi
             string expression = @"\\";
             Match m = Regex.Match(imageLink,expression);
             string randomImage = imageLink.Replace(m.ToString(),"");
-            Console.WriteLine(randomImage);
             Assert.That(randomImage.Contains(".jpg"));
         }
     }

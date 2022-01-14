@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace DogApi.Controller
 {
-    class DogController
+    class HttpClientHelper
     {
         public async Task<IRestResponse> GetRequest(string requestUrl)
         {

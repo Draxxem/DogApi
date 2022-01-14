@@ -2,15 +2,15 @@
 
 namespace DogApi.Models
 {
-    class Model
+    class DogBreed
     {
-        public class Root
+        public class BreedDetailsRoot
         {
-            public Message message { get; set; }
+            public BreedDetails message { get; set; }
             public string status { get; set; }
         }
 
-        public class Message
+        public class BreedDetails
         {
             public List<object> affenpinscher { get; set; }
             public List<object> african { get; set; }
