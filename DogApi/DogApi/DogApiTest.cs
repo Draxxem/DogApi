@@ -1,10 +1,13 @@
 using DogApi.Controller;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using NUnit.Framework;
 using System.Text.RegularExpressions;
+using Assert = NUnit.Framework.Assert;
 
 namespace DogApi
 {
+    [TestClass]
      class DogApiTest : Models.DogBreed
     {
         HttpClientHelper dog = new HttpClientHelper();
