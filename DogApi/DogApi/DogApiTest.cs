@@ -11,11 +11,12 @@ namespace DogApi
      class DogApiTest : Models.DogBreed
     {
         HttpClientHelper dog = new HttpClientHelper();
+        ConfigManager conf = new ConfigManager();
 
         [Test]
         public void VerifyRetrieverIsWithinList()
-        {        
-            var response = dog.GetRequest("https://dog.ceo/api/breeds/list/all");
+        {   
+            var response = dog.GetRequest(conf.Config().AllBreedsUrl);
             string json = response.Result.Content;
             BreedDetailsRoot dogBreeds = JsonConvert.DeserializeObject<BreedDetailsRoot>(json);
             string breedList = JsonConvert.SerializeObject(dogBreeds, Formatting.Indented);
@@ -25,7 +26,7 @@ namespace DogApi
         [Test]
         public void ReturnRetrieverSubBreeds()
         {
-            var response = dog.GetRequest("https://dog.ceo/api/breeds/list/all");
+            var response = dog.GetRequest(conf.Config().AllBreedsUrl);
             string json = response.Result.Content;
             BreedDetailsRoot dogBreeds = JsonConvert.DeserializeObject<BreedDetailsRoot>(json);
             string subBreed = JsonConvert.SerializeObject(dogBreeds.message.retriever, Formatting.Indented);            
@@ -35,7 +36,7 @@ namespace DogApi
         [Test]
         public void ProduceRandomImageLinkForSubBreed()
         {
-            var response = dog.GetRequest("https://dog.ceo/api/breed/retriever/golden/images/random");
+            var response = dog.GetRequest(conf.Config().RandomBreedsUrl);
             string imageLink = response.Result.Content;
             string expression = @"\\";
             Match m = Regex.Match(imageLink,expression);
