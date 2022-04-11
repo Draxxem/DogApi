@@ -220,11 +220,6 @@ C:\MyRepo\DogApi\DogApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileSystemG
 C:\MyRepo\DogApi\DogApi\bin\Debug\netcoreapp3.1\System.Text.Encodings.Web.dll
 C:\MyRepo\DogApi\DogApi\bin\Debug\netcoreapp3.1\System.Text.Json.dll
 C:\MyRepo\DogApi\DogApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
-C:\MyRepo\DogApi\DogApi\bin\Debug\netcoreapp3.1\BoDi.dll
-C:\MyRepo\DogApi\DogApi\bin\Debug\netcoreapp3.1\Gherkin.dll
-C:\MyRepo\DogApi\DogApi\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
-C:\MyRepo\DogApi\DogApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
-C:\MyRepo\DogApi\DogApi\bin\Debug\netcoreapp3.1\TechTalk.SpecFlow.dll
-C:\MyRepo\DogApi\DogApi\bin\Debug\netcoreapp3.1\SpecFlow.Internal.Json.dll
 C:\MyRepo\DogApi\DogApi\obj\Debug\netcoreapp3.1\DogApi.csproj.CoreCompileInputs.cache
-C:\MyRepo\DogApi\DogApi\obj\Debug\netcoreapp3.1\DogApi.csprojAssemblyReference.cache
+C:\MyRepo\DogApi\DogApi\obj\Debug\netcoreapp3.1\DogApi.csproj.AssemblyReference.cache
+C:\MyRepo\DogApi\DogApi\obj\Debug\netcoreapp3.1\DogApi.GeneratedMSBuildEditorConfig.editorconfig

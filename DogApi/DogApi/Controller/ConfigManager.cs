@@ -2,6 +2,8 @@
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 namespace DogApi.Controller
 {
@@ -9,7 +11,8 @@ namespace DogApi.Controller
     {
         public DogApiConfig Config()
         {
-            var config = new ConfigurationBuilder().SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+            var path = Path.GetFullPath(@"..\..\..\");
+            var config = new ConfigurationBuilder().SetBasePath(path)
           .AddJsonFile("AppSettings.json").Build();
 
             var section = config.GetSection(nameof(DogApiConfig));

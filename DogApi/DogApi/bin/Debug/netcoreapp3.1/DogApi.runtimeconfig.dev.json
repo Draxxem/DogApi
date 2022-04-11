@@ -2,7 +2,8 @@
   "runtimeOptions": {
     "additionalProbingPaths": [
       "C:\\Users\\qlwor\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\qlwor\\.nuget\\packages"
+      "C:\\Users\\qlwor\\.nuget\\packages",
+      "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet"
     ]
   }
 }
